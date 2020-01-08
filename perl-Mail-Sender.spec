@@ -4,7 +4,7 @@
 #
 Name     : perl-Mail-Sender
 Version  : 0.903
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/Mail-Sender-0.903.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/Mail-Sender-0.903.tar.gz
 Summary  : '(DEPRECATED) module for sending mails with attachments through an SMTP server'
@@ -84,6 +84,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Mail/Sender.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Mail/Sender/CType/Ext.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Mail/Sender/CType/Win32.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Mail/Sender.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Mail/Sender/CType/Ext.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Mail/Sender/CType/Win32.pm
