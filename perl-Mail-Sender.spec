@@ -4,12 +4,13 @@
 #
 Name     : perl-Mail-Sender
 Version  : 0.903
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/Mail-Sender-0.903.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/Mail-Sender-0.903.tar.gz
 Summary  : '(DEPRECATED) module for sending mails with attachments through an SMTP server'
 Group    : Development/Tools
-License  : Artistic-1.0-Perl
+License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
+Requires: perl-Mail-Sender-license = %{version}-%{release}
 Requires: perl-Mail-Sender-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
@@ -26,6 +27,14 @@ Requires: perl-Mail-Sender = %{version}-%{release}
 
 %description dev
 dev components for the perl-Mail-Sender package.
+
+
+%package license
+Summary: license components for the perl-Mail-Sender package.
+Group: Default
+
+%description license
+license components for the perl-Mail-Sender package.
 
 
 %package perl
@@ -63,6 +72,8 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-Mail-Sender
+cp %{_builddir}/Mail-Sender-0.903/LICENSE %{buildroot}/usr/share/package-licenses/perl-Mail-Sender/a13a10f7ca2ebf34644ad35913ac26eb98a2ed2b
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -82,8 +93,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Mail::Sender::CType::Ext.3
 /usr/share/man/man3/Mail::Sender::CType::Win32.3
 
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-Mail-Sender/a13a10f7ca2ebf34644ad35913ac26eb98a2ed2b
+
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/Mail/Sender.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Mail/Sender/CType/Ext.pm
-/usr/lib/perl5/vendor_perl/5.30.1/Mail/Sender/CType/Win32.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Mail/Sender.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Mail/Sender/CType/Ext.pm
+/usr/lib/perl5/vendor_perl/5.30.2/Mail/Sender/CType/Win32.pm
