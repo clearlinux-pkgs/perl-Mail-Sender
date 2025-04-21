@@ -7,7 +7,7 @@
 #
 Name     : perl-Mail-Sender
 Version  : 0.903
-Release  : 13
+Release  : 14
 URL      : https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/Mail-Sender-0.903.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/Mail-Sender-0.903.tar.gz
 Summary  : '(DEPRECATED) module for sending mails with attachments through an SMTP server'
